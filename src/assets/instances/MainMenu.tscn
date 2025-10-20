@@ -1,0 +1,272 @@
+[gd_scene load_steps=19 format=3 uid="uid://donjckypf8xxw"]
+
+[ext_resource type="Script" uid="uid://dbjmt5g12jx6k" path="res://assets/scripts/mainmenu.gd" id="1_b4jwj"]
+[ext_resource type="Texture2D" uid="uid://dugmtuc8v2ujp" path="res://assets/graphics/images/Main Menu.png" id="2_7vrct"]
+[ext_resource type="Theme" uid="uid://x5k82xqjeiec" path="res://themes/PlayButton.tres" id="3_2j1b4"]
+[ext_resource type="Theme" uid="uid://bjuef82huajdy" path="res://themes/SettingButton.tres" id="4_kpr7e"]
+[ext_resource type="Theme" uid="uid://bxp27oqogogxa" path="res://themes/ExitButton.tres" id="5_libpf"]
+[ext_resource type="Texture2D" uid="uid://runf2rlmtdii" path="res://assets/graphics/images/Window_2.png" id="6_y5smv"]
+[ext_resource type="Theme" uid="uid://byop12yj2qjbk" path="res://themes/BackButton.tres" id="7_hi2nh"]
+[ext_resource type="Texture2D" uid="uid://b6sl1c08txg88" path="res://assets/graphics/images/Music_BTN.png" id="8_2vu7r"]
+[ext_resource type="Theme" uid="uid://fjrynb4k8npl" path="res://themes/OKButton.tres" id="9_y70di"]
+[ext_resource type="Texture2D" uid="uid://b22ydhhkdx4w0" path="res://assets/graphics/images/Sound_BTN.png" id="10_qku3x"]
+[ext_resource type="Texture2D" uid="uid://unlgtw57wau0" path="res://assets/graphics/images/Logo.png" id="11_x3uj5"]
+[ext_resource type="Theme" uid="uid://cm5clc8lrjaem" path="res://themes/InfoButton.tres" id="12_jbxoq"]
+[ext_resource type="Texture2D" uid="uid://btpc3vrraxm2g" path="res://assets/graphics/images/Window.png" id="13_l5s8y"]
+[ext_resource type="Texture2D" uid="uid://c6xktcmb8p27k" path="res://assets/graphics/images/Rewind_BTN.png" id="14_8vt71"]
+[ext_resource type="Texture2D" uid="uid://l0rfwlhv8v44" path="res://assets/graphics/images/ChangeLevelButtonUp.png" id="15_hnunc"]
+[ext_resource type="Texture2D" uid="uid://cxfc0lnhvlldl" path="res://assets/graphics/images/ChangeLevelButtonDown.png" id="16_q018n"]
+[ext_resource type="Texture2D" uid="uid://b87jorne7xbd" path="res://assets/graphics/images/PlaceTurret_BTN.png" id="17_4wff0"]
+[ext_resource type="Texture2D" uid="uid://u4joqgkqs4ip" path="res://assets/graphics/images/UpgradeTurret_BTN.png" id="18_n4lsl"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_b4jwj")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(385.5, 217)
+scale = Vector2(1.0013, 1)
+texture = ExtResource("2_7vrct")
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 271.0
+offset_top = 256.0
+offset_right = 501.533
+offset_bottom = 332.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_2j1b4")
+expand_icon = true
+
+[node name="SettingsButton" type="Button" parent="."]
+layout_mode = 1
+offset_left = 705.0
+offset_top = 9.0
+offset_right = 765.0
+offset_bottom = 69.0
+theme = ExtResource("4_kpr7e")
+expand_icon = true
+
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 271.0
+offset_top = 337.0
+offset_right = 503.0
+offset_bottom = 411.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_libpf")
+expand_icon = true
+
+[node name="SettingsPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 24.0
+offset_top = -59.0
+offset_right = 64.0
+offset_bottom = -19.0
+
+[node name="TextureRect" type="TextureRect" parent="SettingsPanel"]
+z_index = 30
+layout_mode = 0
+offset_left = 224.0
+offset_top = 80.0
+offset_right = 501.0
+offset_bottom = 468.155
+texture = ExtResource("6_y5smv")
+expand_mode = 1
+
+[node name="BackButton" type="Button" parent="SettingsPanel/TextureRect"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 289.0
+offset_right = 115.0
+offset_bottom = 359.0
+theme = ExtResource("7_hi2nh")
+expand_icon = true
+
+[node name="MusicSlider" type="HSlider" parent="SettingsPanel/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.418
+anchor_top = 0.265
+anchor_right = -0.418
+anchor_bottom = 0.265
+offset_left = 191.786
+offset_top = -68.861
+offset_right = 364.786
+offset_bottom = 17.139
+
+[node name="MusicIcon" type="Sprite2D" parent="SettingsPanel/TextureRect"]
+position = Vector2(45, 78)
+scale = Vector2(0.204762, 0.204762)
+texture = ExtResource("8_2vu7r")
+
+[node name="OKButton" type="Button" parent="SettingsPanel/TextureRect"]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 289.0
+offset_right = 223.0
+offset_bottom = 359.0
+theme = ExtResource("9_y70di")
+expand_icon = true
+
+[node name="SettingsName" type="Sprite2D" parent="SettingsPanel/TextureRect"]
+
+[node name="Sound" type="Sprite2D" parent="SettingsPanel/TextureRect"]
+position = Vector2(45, 138)
+scale = Vector2(0.209524, 0.209524)
+texture = ExtResource("10_qku3x")
+
+[node name="VolumeSlider" type="HSlider" parent="SettingsPanel/TextureRect"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 122.0
+offset_right = 251.0
+offset_bottom = 154.0
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(384, 133)
+scale = Vector2(0.61747, 0.61747)
+texture = ExtResource("11_x3uj5")
+
+[node name="InfoButton" type="Button" parent="."]
+layout_mode = 1
+offset_left = 705.0
+offset_top = 70.0
+offset_right = 765.0
+offset_bottom = 130.0
+theme = ExtResource("12_jbxoq")
+
+[node name="InfoPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 24.0
+offset_top = -59.0
+offset_right = 64.0
+offset_bottom = -19.0
+
+[node name="TextureRect" type="TextureRect" parent="InfoPanel"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 80.0
+offset_right = 501.0
+offset_bottom = 468.155
+texture = ExtResource("13_l5s8y")
+expand_mode = 1
+
+[node name="OK2Button" type="Button" parent="InfoPanel/TextureRect"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 299.0
+offset_right = 178.0
+offset_bottom = 369.0
+theme = ExtResource("9_y70di")
+
+[node name="RewindButton" type="Sprite2D" parent="InfoPanel/TextureRect"]
+position = Vector2(39, 77)
+scale = Vector2(0.205, 0.205)
+texture = ExtResource("14_8vt71")
+
+[node name="RewindLabel" type="Label" parent="InfoPanel/TextureRect"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 57.0
+offset_right = 434.0
+offset_bottom = 126.0
+scale = Vector2(0.55, 0.55)
+text = "This is the rewind button
+It lets you rewind time!
+It only appers at wave start"
+
+[node name="LevelUpButton" type="Sprite2D" parent="InfoPanel/TextureRect"]
+position = Vector2(39, 123)
+scale = Vector2(0.205, 0.205)
+texture = ExtResource("15_hnunc")
+
+[node name="LevelDownButton" type="Sprite2D" parent="InfoPanel/TextureRect"]
+position = Vector2(39, 169)
+scale = Vector2(0.205, 0.205)
+texture = ExtResource("16_q018n")
+
+[node name="LevelDownLabel" type="Label" parent="InfoPanel/TextureRect"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 149.0
+offset_right = 103.0
+offset_bottom = 170.0
+scale = Vector2(0.55, 0.55)
+text = "this is the level down button
+it lets you go to the past!
+it apperes at lvl completion"
+
+[node name="LevelUpLabel" type="Label" parent="InfoPanel/TextureRect"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 103.0
+offset_right = 103.0
+offset_bottom = 124.0
+scale = Vector2(0.55, 0.55)
+text = "this is the level up button
+it lets you go to the furture!
+it apperes at lvl completion"
+
+[node name="Info" type="Label" parent="InfoPanel/TextureRect"]
+layout_mode = 0
+offset_left = 88.0
+offset_right = 138.0
+offset_bottom = 21.0
+scale = Vector2(2, 2)
+text = "INFO"
+
+[node name="PlaceTurretButton" type="Sprite2D" parent="InfoPanel/TextureRect"]
+position = Vector2(39, 215)
+scale = Vector2(0.205, 0.205)
+texture = ExtResource("17_4wff0")
+
+[node name="UpgradeTurretButton" type="Sprite2D" parent="InfoPanel/TextureRect"]
+position = Vector2(39, 261)
+scale = Vector2(0.205, 0.205)
+texture = ExtResource("18_n4lsl")
+
+[node name="PlaceTurretLabel" type="Label" parent="InfoPanel/TextureRect"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 196.0
+offset_right = 423.0
+offset_bottom = 265.0
+scale = Vector2(0.55, 0.55)
+text = "This button places a turret
+It appers behind the turret
+"
+
+[node name="UpgradeTurretLabel" type="Label" parent="InfoPanel/TextureRect"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 241.0
+offset_right = 394.0
+offset_bottom = 310.0
+scale = Vector2(0.55, 0.55)
+text = "This button upgrades a 
+turret. It appears behind 
+the turret"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="SettingsPanel/TextureRect/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="SettingsPanel/TextureRect/OKButton" to="." method="_on_ok_button_pressed"]
+[connection signal="pressed" from="InfoButton" to="." method="_on_info_button_pressed"]
+[connection signal="pressed" from="InfoPanel/TextureRect/OK2Button" to="." method="_on_ok_2_button_pressed"]

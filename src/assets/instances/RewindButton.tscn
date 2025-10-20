@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjll7yyctovk"]
+
+[ext_resource type="Script" uid="uid://glgec3uy44ki" path="res://assets/scripts/rewindbutton.gd" id="1_42xor"]
+[ext_resource type="PackedScene" uid="uid://cygdevq8xqkh0" path="res://assets/instances/ClockRewind.tscn" id="2_65ity"]
+[ext_resource type="Theme" uid="uid://cl6owjt1b1yrh" path="res://themes/RewindButton.tres" id="2_xghy2"]
+
+[node name="RewindButton" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_42xor")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 57.0
+offset_bottom = 57.0
+theme = ExtResource("2_xghy2")
+
+[node name="ClockRewind" parent="." instance=ExtResource("2_65ity")]
+position = Vector2(25, -1)
+
+[node name="RewindTimeLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 3.0
+offset_top = 27.0
+offset_right = 43.0
+offset_bottom = 50.0
+grow_horizontal = 0
+grow_vertical = 2

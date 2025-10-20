@@ -1,0 +1,174 @@
+[gd_scene load_steps=9 format=3 uid="uid://dwj53bcbsqsjf"]
+
+[ext_resource type="Script" uid="uid://ctbea81mnwy4v" path="res://assets/scripts/turret.gd" id="1_stu05"]
+[ext_resource type="SpriteFrames" uid="uid://dcaxgu05w3jen" path="res://assets/animations/turret.tres" id="2_qj1p8"]
+[ext_resource type="PackedScene" uid="uid://bd3qhs4pti2ua" path="res://assets/instances/Bullet.tscn" id="2_rbnfk"]
+[ext_resource type="Texture2D" uid="uid://b87jorne7xbd" path="res://assets/graphics/images/PlaceTurret_BTN.png" id="4_ovwg2"]
+[ext_resource type="Texture2D" uid="uid://s7rmfryaqftw" path="res://assets/graphics/images/PlaceTurretHover_BTN.png" id="6_j77sf"]
+[ext_resource type="Texture2D" uid="uid://btpc3vrraxm2g" path="res://assets/graphics/images/Window.png" id="6_jkpk2"]
+[ext_resource type="Theme" uid="uid://byop12yj2qjbk" path="res://themes/BackButton.tres" id="7_jkpk2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ox8qe"]
+
+[node name="Turret" type="CharacterBody2D"]
+script = ExtResource("1_stu05")
+bullet_scene = ExtResource("2_rbnfk")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.01
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_qj1p8")
+animation = &"idle"
+
+[node name="TurretHitZone" type="Area2D" parent="."]
+position = Vector2(2, 0)
+collision_layer = 16
+collision_mask = 0
+
+[node name="HitZone" type="CollisionShape2D" parent="TurretHitZone"]
+shape = SubResource("RectangleShape2D_ox8qe")
+
+[node name="LevelLabel" type="Label" parent="."]
+offset_left = -12.0
+offset_top = -30.0
+offset_right = 20.0
+offset_bottom = -7.0
+scale = Vector2(0.5, 0.5)
+text = "LVL "
+
+[node name="nLevel" type="Label" parent="LevelLabel"]
+layout_mode = 0
+offset_left = 46.0
+offset_right = 60.0
+offset_bottom = 23.0
+
+[node name="TurretButton" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -19.0
+offset_top = -16.0
+offset_right = 18.0
+offset_bottom = 16.0
+
+[node name="TurretPanel" type="Panel" parent="."]
+offset_left = 26.0
+offset_top = 26.0
+offset_right = 66.0
+offset_bottom = 66.0
+
+[node name="TurretPanelTexture" type="TextureRect" parent="TurretPanel"]
+z_index = 10
+layout_mode = 0
+offset_left = -11.0
+offset_top = -11.0
+offset_right = 187.0
+offset_bottom = 285.0
+texture = ExtResource("6_jkpk2")
+expand_mode = 1
+
+[node name="CTPButton" type="Button" parent="TurretPanel/TurretPanelTexture"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 237.0
+offset_right = 123.0
+offset_bottom = 284.0
+theme = ExtResource("7_jkpk2")
+
+[node name="Turret" type="Label" parent="TurretPanel/TurretPanelTexture"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 6.0
+offset_right = 132.0
+offset_bottom = 27.0
+text = "Turret"
+
+[node name="nTurret" type="Label" parent="TurretPanel/TurretPanelTexture/Turret"]
+layout_mode = 0
+offset_left = 96.0
+offset_right = 114.0
+offset_bottom = 21.0
+
+[node name="UpgradeButton" type="TextureButton" parent="TurretPanel/TurretPanelTexture"]
+z_index = 10
+layout_mode = 0
+offset_left = 155.0
+offset_top = 136.0
+offset_right = 180.0
+offset_bottom = 161.0
+texture_normal = ExtResource("4_ovwg2")
+texture_hover = ExtResource("6_j77sf")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="UpgradePrice" type="Label" parent="TurretPanel/TurretPanelTexture"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 68.0
+offset_right = 215.0
+offset_bottom = 89.0
+scale = Vector2(0.7, 0.7)
+text = "Upgrade Price:"
+
+[node name="nPrice" type="Label" parent="TurretPanel/TurretPanelTexture/UpgradePrice"]
+layout_mode = 0
+offset_left = 195.0
+offset_top = -1.429
+offset_right = 228.0
+offset_bottom = 25.571
+
+[node name="UpgradeTurret" type="Label" parent="TurretPanel/TurretPanelTexture"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 141.0
+offset_right = 215.0
+offset_bottom = 162.0
+scale = Vector2(0.7, 0.7)
+text = "Upgrade Turret"
+
+[node name="ShootingSpeed" type="Label" parent="TurretPanel/TurretPanelTexture"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 117.0
+offset_right = 201.0
+offset_bottom = 138.0
+scale = Vector2(0.7, 0.7)
+text = "Shooting speed:"
+
+[node name="nShootingSpeed" type="Label" parent="TurretPanel/TurretPanelTexture/ShootingSpeed"]
+layout_mode = 0
+offset_left = 203.0
+offset_right = 243.0
+offset_bottom = 21.0
+
+[node name="BulletDamage" type="Label" parent="TurretPanel/TurretPanelTexture"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 92.0
+offset_right = 201.0
+offset_bottom = 113.0
+scale = Vector2(0.7, 0.7)
+text = "Bullet Damage:"
+
+[node name="nBulletDamage" type="Label" parent="TurretPanel/TurretPanelTexture/BulletDamage"]
+layout_mode = 0
+offset_left = 197.0
+offset_right = 237.0
+offset_bottom = 21.0
+
+[node name="TurretLevel" type="Label" parent="TurretPanel/TurretPanelTexture"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 44.0
+offset_right = 175.0
+offset_bottom = 65.0
+scale = Vector2(0.7, 0.7)
+text = "Turret Level:"
+
+[node name="nTurretLevel" type="Label" parent="TurretPanel/TurretPanelTexture/TurretLevel"]
+layout_mode = 0
+offset_left = 178.0
+offset_right = 218.0
+offset_bottom = 21.0
+
+[connection signal="pressed" from="TurretButton" to="." method="_on_turret_button_pressed"]
+[connection signal="pressed" from="TurretPanel/TurretPanelTexture/CTPButton" to="." method="_on_ctp_button_pressed"]

@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://bijaf35alms5m"]
+
+[ext_resource type="Script" uid="uid://cxw1u7ne8j2l4" path="res://assets/scripts/gameover.gd" id="1_c7g84"]
+[ext_resource type="Theme" uid="uid://42m73u1cdma1" path="res://themes/ExitToMainMenu.tres" id="2_ao51v"]
+[ext_resource type="Theme" uid="uid://b7ddeafqtyxu5" path="res://themes/RestartButton.tres" id="3_e0kql"]
+
+[node name="Gameover" type="Control"]
+z_index = 4
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_c7g84")
+
+[node name="MenuButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 245.0
+offset_top = 174.0
+offset_right = 523.0
+offset_bottom = 254.0
+theme = ExtResource("2_ao51v")
+text = "
+"
+
+[node name="GameOverLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 70.0
+offset_right = 608.0
+offset_bottom = 93.0
+text = "You have lost! Here are your stats:"
+
+[node name="WavesCompletedLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 266.0
+offset_top = 106.0
+offset_right = 501.0
+offset_bottom = 129.0
+text = "Waves Completed: "
+
+[node name="nWaves" type="Label" parent="WavesCompletedLabel"]
+layout_mode = 0
+offset_left = 235.0
+offset_right = 275.0
+offset_bottom = 23.0
+
+[node name="EnemiesKilledLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 291.0
+offset_top = 144.0
+offset_right = 408.0
+offset_bottom = 167.0
+text = "Enemies Killed:"
+
+[node name="nEnemies" type="Label" parent="EnemiesKilledLabel"]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 1.0
+offset_right = 227.0
+offset_bottom = 24.0
+
+[node name="RestartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 245.0
+offset_top = 268.0
+offset_right = 523.0
+offset_bottom = 347.0
+theme = ExtResource("3_e0kql")

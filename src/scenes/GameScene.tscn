@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://buju8ngg0gkyx"]
+
+[ext_resource type="PackedScene" uid="uid://cpnnesgtrk10c" path="res://assets/instances/GameOverlay.tscn" id="1_vh257"]
+
+[node name="GameScene" type="Node2D"]
+
+[node name="GameOverlay" parent="." instance=ExtResource("1_vh257")]

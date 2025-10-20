@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cygdevq8xqkh0"]
+
+[ext_resource type="Texture2D" uid="uid://bmoudmy3clhnb" path="res://assets/graphics/images/Ur.png" id="2_tns2y"]
+[ext_resource type="Texture2D" uid="uid://bp0qvwp4lg002" path="res://assets/graphics/images/Viser.png" id="3_samw7"]
+
+[node name="ClockRewind" type="Node2D"]
+z_index = 100
+
+[node name="ClockBackground" type="Sprite2D" parent="."]
+position = Vector2(-280, 210)
+texture = ExtResource("2_tns2y")
+
+[node name="Rotation" type="Node2D" parent="."]
+position = Vector2(-279, 211)
+
+[node name="ClockArrow" type="Sprite2D" parent="Rotation"]
+physics_interpolation_mode = 2
+position = Vector2(0, 34)
+texture = ExtResource("3_samw7")
+flip_v = true
